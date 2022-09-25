@@ -1,0 +1,13 @@
+{:paths ["src"]
+
+ :deps  {org.clojure/clojure {:mvn/version "1.10.1"}
+         net.n01se/clojure-jna {:mvn/version "1.0.0"}
+         ; ecs
+         brute/brute {:mvn/version "0.4.0"}
+         ; jep419: foreign function
+         org.suskalo/coffi {:mvn/version "0.5.357"}}
+ :aliases {:jna-local {:jvm-opts ["-Djna.library.path=/home/willem/git/tests/clojure/bindings/clj-jna/native"]}
+           :jna-dir {:jvm-opts ["-Djna.library.path=/home/willem/git/tests/clojure/bindings/cljjnarustclib/target/release"]}
+           :coffi-dir {:jvm-opts ["-Djava.library.path=/home/willem/git/tests/clojure/bindings/cljjnarustclib/target/release"
+                                "--add-modules=jdk.incubator.foreign"
+                                "--enable-native-access=ALL-UNNAMED"]}}}
